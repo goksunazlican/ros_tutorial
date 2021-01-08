@@ -1,6 +1,6 @@
-# Foobar
+# Simple Ros Package
 
-Foobar is a Python library for dealing with word pluralization.
+A single package for understanding ros.
 
 ## Installation
 
