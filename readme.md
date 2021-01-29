@@ -2,11 +2,6 @@
 
 A single package has 2 nodes and 2 topics created for understanding ros.
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
 
 ## Tutorials
 
