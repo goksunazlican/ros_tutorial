@@ -1,4 +1,4 @@
-#Simple Ros Package
+# Simple Ros Package
 
 A single package has 2 nodes and 2 topics created for understanding ros.
 
@@ -15,16 +15,16 @@ A single package has 2 nodes and 2 topics created for understanding ros.
 
 ## Problem
 The publisher node sends a random variable to subscriber, then subscriber performs a calculation and publish the output.
-#### - Generator Node(Python):
+#### -Generator Node(Python):
 Generates a random number with 20hz frequency and publishes it to *"values"* topic in [std_msgs::UInt32](http://docs.ros.org/en/api/std_msgs/html/msg/UInt32.html) message format.
 
-#### - Processor Node(C++):
+#### -Processor Node(C++):
 Subscribes to the *"values"* topic. Performs [ n^2 + t_old] operation and publishes the result to *"results"* topic in [std_msgs::String](http://docs.ros.org/en/api/std_msgs/html/msg/String.html) format. 
 n is the current value received. t_old is the previous value calculated. (take t_old = 0 for initialization).
-###Pre requierements
+### Pre requierements
 If you didn't set up yet, you can follow the [ros tutorials](http://wiki.ros.org/ROS/Tutorials) from installing to creating ros workspace and ros package.
 
-##Generator Node: talker.py
+## Generator Node: talker.py
 You can reach the source code from src/package2/src/talker.py.
 
 First, we need to add the libraries that *rospy*, *String* and *UInt32* from standart messages and *randint *from random.
@@ -61,7 +61,7 @@ if __name__ == '__main__':
         pass
 ```
 
-##Processor Node: listener.cpp
+## Processor Node: listener.cpp
 As in the talker, we should include libraries such as *ros.h* from ros, *String.h* from std_msgs, *UInt32.h* from std_msgs and *sstream*.
 ```cpp
 #include "ros/ros.h"
@@ -119,7 +119,7 @@ int main(int argc, char **argv)
 ```
 
 Before run the project, we need to do configurations in package.xml and CMakeList.txt files.
-##package.xml:
+## package.xml:
 ```xml
 <?xml version="1.0"?>
 <package format="2">
@@ -144,7 +144,7 @@ Before run the project, we need to do configurations in package.xml and CMakeLis
 
 ```
 
-##CMakeList.txt:
+## CMakeList.txt:
     cmake_minimum_required(VERSION 3.0.2)
     project(package2)
     
