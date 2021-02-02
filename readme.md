@@ -1,23 +1,23 @@
-# Simple Ros Package
+# Simple ROS Package :robot:
 
-A single package has 2 nodes and 2 topics created for understanding ros.
+A single package that has 2 nodes and 2 topics created to have a basic understanding of ROS.
 
 
 ## Tutorials
 
-[Ros tutorials](http://wiki.ros.org/ROS/Tutorials) were used in this repository.
+[ROS tutorials](http://wiki.ros.org/ROS/Tutorials) were used in this repository.
 
 
 ## Problem
-The publisher node sends a random variable to subscriber, then subscriber performs a calculation and publish the output.
+The publisher node sends a random variable to subscriber, then subscriber performs a calculation and publishes the output.
 #### -Generator Node(Python):
 Generates a random number with 20hz frequency and publishes it to *"values"* topic in [std_msgs::UInt32](http://docs.ros.org/en/api/std_msgs/html/msg/UInt32.html) message format.
 
 #### -Processor Node(C++):
 Subscribes to the *"values"* topic. Performs [ n^2 + t_old] operation and publishes the result to *"results"* topic in [std_msgs::String](http://docs.ros.org/en/api/std_msgs/html/msg/String.html) format. 
-n is the current value received. t_old is the previous value calculated. (take t_old = 0 for initialization).
+n is the most recently received value. t_old is the previous value calculated. (take t_old = 0 for initialization).
 ### Pre requierements
-If you didn't set up yet, you can follow the [ros tutorials](http://wiki.ros.org/ROS/Tutorials) from installing to creating ros workspace and ros package.
+If you haven't set up yet, you can follow the [ros tutorials](http://wiki.ros.org/ROS/Tutorials) from installing to creating ros workspace and ros package.
 
 ## Generator Node: talker.py
 You can reach the source code from src/package2/src/talker.py.
@@ -170,7 +170,7 @@ Run roscore in another terminal:
  ```bash
       $ roscore
 ```
-So, for run the project first go the workspace folder and run CMake. We use CMake as our build system:
+So, to run the project first go the workspace folder and run CMake. We use CMake as our build system:
  ```bash
        $ cd ~/catkin_ws2
 	  ~/catkin_ws$ catkin_make
